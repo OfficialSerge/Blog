@@ -35,7 +35,7 @@ export default async function About() {
     <FramerMotionWrapper>
       <Header title="About me" />
       <div className="flex flex-col lg:relative text-white">
-        <div className="relative mb-4 lg:mb-12 lg:ml-auto w-44 h-44 lg:w-72 lg:h-72">
+        <div className="relative mb-4 lg:mb-12 lg:ml-auto lg:mr-10 w-44 h-44 lg:w-72 lg:h-72">
           <Image
             className="object-cover object-center rounded-full border-4 border-white"
             src={mySelfie}
@@ -46,7 +46,7 @@ export default async function About() {
           />
         </div>
 
-        <div className="lg:absolute lg:top-0">
+        <div className="lg:absolute lg:top-0 3xl:ml-10">
           <h1 className="text-2xl">Hi 👋 My name is Serge</h1>
           <br />
           <ul>

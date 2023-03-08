@@ -33,10 +33,7 @@
   .imgFrame {
     @apply relative h-full hover:border-4 hover:border-white transform ease-linear duration-100 rounded-lg cursor-pointer;
   }
-  .mobileMenu {
-    @apply fixed top-0 left-0 w-full p-6 border-white border z-10
-  }
-  .normalMenu {
-    @apply fixed top-0 left-0 h-full p-6 border-white border z-10
+  .menu {
+    @apply fixed top-0 left-0 w-full z-10
   }
 }
