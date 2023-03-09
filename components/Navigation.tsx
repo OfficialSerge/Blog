@@ -46,7 +46,27 @@ const nav = {
   }
 };
 
-function Path(props) {
+interface PathProps {
+  d?: string
+  transition?: {
+    duration: number
+  }
+  variants: {
+    closed: { d: string } | { opacity: number };
+    open: { d: string } | { opacity: number };
+  };
+}
+
+interface MenuToggleProps {
+  toggle: () => void;
+}
+
+interface MenuItemProps {
+  link: string;
+  toggle: () => void;
+}
+
+function Path(props: PathProps) {
   return (
     <motion.path
       fill="transparent"
@@ -58,7 +78,7 @@ function Path(props) {
   );
 }
 
-function MenuToggle({ toggle }) {
+function MenuToggle({ toggle }: MenuToggleProps) {
   return (
     <button onClick={toggle} className="absolute top-0 right-0 p-6 z-10 cursor-auto">
       <svg className="cursor-pointer" viewBox="0 0 22 20">
@@ -84,7 +104,7 @@ function MenuToggle({ toggle }) {
   );
 }
 
-function MenuItem({ link, toggle }) {
+function MenuItem({ link, toggle }: MenuItemProps) {
   return (
     <motion.div
       className="mt-4 text-center z-10"
@@ -99,7 +119,7 @@ function MenuItem({ link, toggle }) {
 
 const items = ['/', '/about']
 
-function Navigation({ toggle }) {
+function Navigation({ toggle }: MenuToggleProps) {
   return (
     <motion.ul variants={menu} className="absolute top-20 w-full">
       {items.map((item, idx) => {

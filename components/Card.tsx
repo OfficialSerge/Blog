@@ -1,17 +1,9 @@
 "use client";
 
 import { useState } from "react";
-
 import Image from "next/image";
-import Link from "next/link";
-
 import getURL from "@/lib/getURL";
-
 import { motion, AnimatePresence } from "framer-motion";
-
-type Props = {
-  posts: Post[];
-};
 
 const variants = {
   enter: (direction: number) => {
@@ -28,7 +20,6 @@ const variants = {
   exit: (direction: number) => {
     return {
       zIndex: 0,
-      // x: direction < 0 ? 1000 : -1000,
       opacity: 0,
     };
   },
@@ -40,7 +31,7 @@ function swipePower(offset: number, velocity: number) {
   return Math.abs(offset) * velocity;
 }
 
-export default function Card({ link, posts }: { link: string; posts: Props }) {
+export default function Card({ link, posts }: { link: string; posts: Post[] }) {
   const [[page, direction], setPage] = useState([0, 0]);
 
   function paginate(newDirection: number) {

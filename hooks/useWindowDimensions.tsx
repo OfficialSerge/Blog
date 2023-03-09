@@ -3,14 +3,14 @@
 import { useLayoutEffect, useState } from "react";
 
 type WindowDimentions = {
-  width: number | undefined;
-  height: number | undefined;
+  width: number;
+  height: number;
 };
 
 export default function useWindowDimensions(): WindowDimentions {
   const [windowDimensions, setWindowDimensions] = useState<WindowDimentions>({
-    width: undefined,
-    height: undefined,
+    width: 0,
+    height: 0,
   });
 
   useLayoutEffect(() => {

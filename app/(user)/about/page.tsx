@@ -21,13 +21,13 @@ const QUERY = groq`
 export default async function About() {
   const posts = await client.fetch(QUERY);
 
-  const aws_posts = posts.filter((post) => {
+  const aws_posts = posts.filter((post: Post) => {
     return post.slug.current.includes("blue");
   });
-  const path_posts = posts.filter((post) => {
+  const path_posts = posts.filter((post: Post) => {
     return post.slug.current.includes("pathfinder");
   });
-  const rndc_posts = posts.filter((post) => {
+  const rndc_posts = posts.filter((post: Post) => {
     return post.slug.current.includes("rndc");
   });
 
@@ -50,16 +50,16 @@ export default async function About() {
           <h1 className="text-2xl">Hi 👋 My name is Serge</h1>
           <br />
           <ul>
-            <li>🌍 I'm based in Chicago</li>
+            <li>🌍 I&apos;m based in Chicago</li>
             <li>✉️ You can contact me at sergiupod@outlook.com</li>
             <li>
               🔭 I’m currently working on building web apps using TypeScript,
               Next, and Tailwind css
             </li>
-            <li>🧠 I'm hoping to learn more Vim and Rust</li>
+            <li>🧠 I&apos;m hoping to learn more Vim and Rust</li>
           </ul>
           <br />
-          <h1 className="text-xl">What I'm Good At</h1>
+          <h1 className="text-xl">What I&apos;m Good At</h1>
           <div className="flex flex-row gap-2">
             <a
               href="https://www.typescriptlang.org/"
